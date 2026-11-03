@@ -33,7 +33,7 @@ Adnan = ConversableAgent(
 
     llm_config=llm_config,
     is_termination_msg=lambda msg: "I gotta go" in msg["content"] or "Goodbye" in msg["content"],
-    human_input_mode="Never",
+    human_input_mode="NEVER",
 
 )
 
@@ -45,7 +45,7 @@ Hassan = ConversableAgent(
 
     llm_config=llm_config,
     is_termination_msg=lambda msg: "I gotta go" in msg["content"] or "Goodbye" in msg["content"],
-    human_input_mode="Never",
+    human_input_mode="NEVER",
 
 
 )
