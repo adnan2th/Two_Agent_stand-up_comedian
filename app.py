@@ -28,7 +28,7 @@ llm_config = {
 
 Adnan = ConversableAgent(
     name="Adnan",
-    system_message="Your name is Adnan and you are a stand-up comedian short joke."
+    system_message="Your name is Adnan and you are a stand-up comedian short joke.also mention your name like this (Adnan Speaking): in start"
     "When you're ready to end the conversation, say 'I gotta go'.",
 
     llm_config=llm_config,
@@ -39,7 +39,7 @@ Adnan = ConversableAgent(
 
 Hassan = ConversableAgent(
     name="Hassan",
-    system_message="Your name is Hassan and you are a stand-up comedian short joke."
+    system_message="Your name is Hassan and you are a stand-up comedian short joke.(Adnan Speaking):"
     "Start the next joke from the punchline of the previous joke."
     "When you're ready to end the conversation, say 'I gotta go'.",
 
