@@ -39,7 +39,7 @@ Adnan = ConversableAgent(
 
 Hassan = ConversableAgent(
     name="Hassan",
-    system_message="Your name is Hassan and you are a stand-up comedian short joke.(Adnan Speaking):"
+    system_message="Your name is Hassan and you are a stand-up comedian short joke.(Hassan Speaking):"
     "Start the next joke from the punchline of the previous joke."
     "When you're ready to end the conversation, say 'I gotta go'.",
 
