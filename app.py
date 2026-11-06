@@ -11,15 +11,22 @@ st.write("A simple stand-up comedy conversation between Adnan & Hassan.")
 
 #api_key = Groq()
 
-api_key= os.environ.get("groq_api")
 
 
+# 1. Safely retrieve the API key from Streamlit's environment/secrets
+api_key = os.environ.get("groq_api") or st.secrets.get("groq_api")
+
+if not api_key:
+    st.error("Groq API Key is missing! Please add 'groq_api' to your Streamlit Secrets.")
+
+# 2. Configure AutoGen with the correct api_type and a valid Groq model name
 llm_config = {
     "config_list": [
         {
-            "model": "openai/gpt-oss-20b", # Using a supported Groq model
+            "model": "llama-3.3-70b-versatile",  # Ensure this is a valid, active Groq model ID
             "api_key": api_key,
-            "base_url": "https://api.groq.com/openai/v1", # Point explicitly to Groq's endpoint
+            "base_url": "https://api.groq.com/openai/v1",
+            "api_type": "openai",  # Tells AutoGen to use the OpenAI client structure for Groq
         }
     ]
 }
