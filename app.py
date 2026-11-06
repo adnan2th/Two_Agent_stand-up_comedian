@@ -14,20 +14,25 @@ st.write("A simple stand-up comedy conversation between Adnan & Hassan.")
 
 
 # 1. Safely retrieve the API key from Streamlit's environment/secrets
+# Pull key safely from whichever environment is running the app
+api_key = os.environ.get("groq_api") or st.secrets.get("groq_api")
 
-
-api_key= os.environ.get("groq_api")
-
+# Force set these so Autogen's default client registration finds them globally
+if api_key:
+    os.environ["OPENAI_API_KEY"] = api_key
+    os.environ["OPENAI_BASE_URL"] = "https://api.groq.com/openai/v1"
 
 llm_config = {
     "config_list": [
         {
-            "model": "openai/gpt-oss-20b", # Using a supported Groq model
+            "model": "llama-3.3-70b-versatile", # Ensure using a valid Groq model ID
             "api_key": api_key,
-            "base_url": "https://api.groq.com/openai/v1", # Point explicitly to Groq's endpoint
+            "base_url": "https://api.groq.com/openai/v1",
         }
     ]
 }
+
+
 
 Adnan = ConversableAgent(
     name="Adnan",
