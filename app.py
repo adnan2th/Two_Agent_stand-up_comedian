@@ -25,7 +25,7 @@ if api_key:
 llm_config = {
     "config_list": [
         {
-            "model": "llama-3.3-70b-versatile", # Ensure using a valid Groq model ID
+            "model": "openai/gpt-oss-20b", # Ensure using a valid Groq model ID
             "api_key": api_key,
             "base_url": "https://api.groq.com/openai/v1",
         }
