@@ -11,7 +11,6 @@ st.write("A simple stand-up comedy conversation between Adnan & Hassan.")
 
 #api_key = Groq()
 
-
 api_key= os.environ.get("groq_api")
 
 
