@@ -27,7 +27,7 @@ llm_config = {
         {
             "model": "openai/gpt-oss-20b", # Ensure using a valid Groq model ID
             "api_key": api_key,
-            "base_url": "https://groq.com",,
+            "base_url": "https://groq.com",
         }
     ]
 }
