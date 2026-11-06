@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import streamlit as st
 
-load_dotenv()
+#load_dotenv()
 
 st.title("🎭 Simple AI Comedy Show")
 st.write("A simple stand-up comedy conversation between Adnan & Hassan.") 
